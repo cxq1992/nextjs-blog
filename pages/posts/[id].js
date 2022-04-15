@@ -3,6 +3,7 @@ import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
+import Image from 'next/image'
 
 export default function Post({ postData }) {
   return (
@@ -17,6 +18,17 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
+      {/* <div className={utilStyles.imageContainer}>
+        { postData.pic && (
+                      <Image
+                      priority
+                      src= {postData.pic}
+                      layout="fill"
+                      className={utilStyles.image}
+                    />
+        )
+        }
+        </div> */}
     </Layout>
   )
 }
